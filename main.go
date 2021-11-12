@@ -88,7 +88,7 @@ func main() {
 		AllowedOrigins: []string{"*"},
 		AllowedMethods: []string{"POST", "GET", "OPTIONS", "PUT", "DELETE"},
 		AllowedHeaders: []string{"Accept", "content-type", "Content-Length", "Accept-Encoding", "X-CSRF-Token", "Authorization"},
-	}).Handlers)
+	}).Handler)
 
 	// create the client to the products-api
 	productsClient := client.NewHTTP(*productAddress)
