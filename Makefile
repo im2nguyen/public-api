@@ -1,5 +1,5 @@
-VERSION=v0.0.4
-REPOSITORY=hashicorpdemoapp/public-api
+VERSION=v0.0.5
+REPOSITORY=im2nguyen/hashicups-public-api
 
 .PHONY: auth
 
