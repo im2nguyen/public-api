@@ -18,6 +18,7 @@ import (
 	"github.com/hashicorp-demoapp/public-api/server"
 	"github.com/hashicorp/go-hclog"
 	"github.com/nicholasjackson/env"
+	"github.com/rs/cors"
 
 	// "github.com/hashicorp-demoapp/public-api/service"
 	"github.com/gorilla/mux"
@@ -82,6 +83,9 @@ func main() {
 	r := mux.NewRouter()
 	r.Use(auth.Middleware(authn))
 	r.Use(hckit.TracingMiddleware)
+	r.Use(cors.New(cors.Options{
+		AllowedOrigins: []string{"*"},
+	}).Handler)
 
 	// create the client to the products-api
 	productsClient := client.NewHTTP(*productAddress)
